@@ -30,7 +30,7 @@ function showMessage(message) {
     const iceCreamList = document.getElementById("iceCreamList");
   
     const flavors = [
-      "banane", "crispies", "Café", "Chocolat", "Citron", "Citron vert",
+      "crispies", "Café", "Chocolat", "Citron", "Citron vert",
       "Coco", "Fraise", "Framboise", "Mangue", "Menthe chocolat", "Moka",
       "Oréo", "Passion", "Pistache", "Pralin", "Rhum raisin", "Ribat halav",
       "Vanille amande", "Vanille", "Vanille chocolat", "Vanille pécans"
