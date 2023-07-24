@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gestion des Glaces</title>
+  <link rel="stylesheet" href="style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <h1>Gestion des Glaces</h1>
+
+  <h2>Ajouter des Glaces</h2>
+  <label for="search">Rechercher un goût :</label>
+  <input type="text" id="search" oninput="searchIceCream()" placeholder="Entrez un goût">
+  <div id="noMatchMessage" style="display: none;">Aucun résultat trouvé.</div>
+
+  <div id="iceCreamList">
+    <!-- Liste des goûts de glace sera générée par le script -->
+  </div>
+
+  <h2>Stock de Glaces</h2>
+  <div id="stock"></div>
+  <script src="script.js"></script>
+</body>
+</html>
