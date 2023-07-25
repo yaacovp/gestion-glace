@@ -30,13 +30,13 @@ function showMessage(message) {
     const iceCreamList = document.getElementById("iceCreamList");
   
     const flavors = [
-      "crispies", "Café", "Chocolat", "Citron", "Citron vert",
+      "Crispies", "Café", "Chocolat", "Citron", "Citron vert",
       "Coco", "Fraise", "Framboise", "Mangue", "Menthe chocolat", "Moka",
       "Oréo", "Passion", "Pistache", "Pralin", "Rhum raisin", "Ribat halav",
       "Vanille amande", "Vanille", "Vanille chocolat", "Vanille pécans"
     ];
   
-    const sizes = ["500cl", "1L"];
+    const sizes = ["500 ml", "1L"];
   
     for (const size of sizes) {
       const columnDiv = document.createElement("div");
