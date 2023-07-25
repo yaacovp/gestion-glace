@@ -131,25 +131,59 @@ function updateStockDisplay() {
   // Créer un tableau pour stocker les clés (noms de glaces) à supprimer
   const keysToRemove = [];
 
+  // Stock séparé pour 500 ml et 1L
+  const stock500mlDiv = document.createElement("div");
+  const stock1LDiv = document.createElement("div");
+
+  // Tableaux pour stocker les glaces triées
+  const sortedFlavors500ml = [];
+  const sortedFlavors1L = [];
+
   for (let i = 0; i < localStorage.length; i++) {
     const key = localStorage.key(i);
     const quantity = parseInt(localStorage.getItem(key));
 
-    // Si la quantité est supérieure à 0, afficher la glace avec sa quantité
+    // Si la quantité est supérieure à 0, ajouter la glace dans le tableau approprié
     if (quantity > 0) {
       const [flavor, size] = key.split("-");
-      stock.innerHTML += `<p>${flavor} ${size}: ${quantity}</p>`;
+      const stockEntry = `<p><strong>${flavor}</strong> ${size}: <strong>${quantity}</strong></p>`;
+
+      if (size === "500 ml") {
+        sortedFlavors500ml.push({ flavor, stockEntry });
+      } else if (size === "1L") {
+        sortedFlavors1L.push({ flavor, stockEntry });
+      }
     } else {
       // Sinon, ajouter la clé (nom de glace) au tableau des clés à supprimer
       keysToRemove.push(key);
     }
   }
 
+  // Trier les glaces par nom avant de les afficher
+  sortedFlavors500ml.sort((a, b) => a.flavor.localeCompare(b.flavor));
+  sortedFlavors1L.sort((a, b) => a.flavor.localeCompare(b.flavor));
+
+  // Ajouter les glaces triées dans la div du stock 500 ml
+  for (const entry of sortedFlavors500ml) {
+    stock500mlDiv.innerHTML += entry.stockEntry;
+  }
+
+  // Ajouter les glaces triées dans la div du stock 1L
+  for (const entry of sortedFlavors1L) {
+    stock1LDiv.innerHTML += entry.stockEntry;
+  }
+
   // Supprimer les clés (noms de glaces) avec une quantité nulle du stock
   for (const keyToRemove of keysToRemove) {
     localStorage.removeItem(keyToRemove);
   }
+
+  // Ajouter les sections de stock dans la div principale
+  stock.appendChild(stock500mlDiv);
+  stock.appendChild(stock1LDiv);
 }
+
+
 
 // Mise à jour de l'affichage du stock au chargement de la page
 window.onload = function () {
