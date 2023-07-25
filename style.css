@@ -38,14 +38,15 @@ h2 {
 
 input[type="text"] {
   width: 100%;
-  padding: 8px;
+  padding: 12px; /* Ajuster la taille de la barre de recherche */
+  font-size: 16px;
   margin-top: 5px;
   box-sizing: border-box;
 }
 
 button {
   font-size: 16px;
-  padding: 5px 10px;
+  padding: 10px 15px; /* Ajuster la taille des boutons */
   cursor: pointer;
   background-color: #4CAF50;
   color: white;
@@ -72,4 +73,67 @@ button.active {
   #iceCreamList {
     grid-template-columns: repeat(1, 1fr); /* Une seule colonne pour les écrans étroits */
   }
+}
+
+/* Ajuster la taille des boutons et des étiquettes de saveur */
+button {
+  font-size: 16px;
+  padding: 10px 15px; /* Augmenter la taille des boutons */
+}
+
+.column label {
+  font-size: 18px; /* Augmenter la taille des étiquettes de saveur */
+}
+
+/* Ajuster la taille de la barre de recherche */
+#search {
+  padding: 12px; /* Augmenter la taille de la barre de recherche */
+  font-size: 16px;
+}
+
+/* Limiter la largeur du tableau des glaces sur des écrans larges */
+#iceCreamList {
+  max-width: 1200px;
+  margin: 0 auto; /* Centrer le tableau des glaces */
+}
+
+/* Styles pour les écrans de très petite taille */
+@media screen and (max-width: 400px) {
+  h2 {
+    font-size: 1.1rem;
+  }
+
+  button {
+    font-size: 14px;
+    padding: 8px 12px; /* Ajuster la taille des boutons pour les petits écrans */
+  }
+
+  .column label {
+    font-size: 16px; /* Ajuster la taille des étiquettes de saveur pour les petits écrans */
+  }
+
+  #search {
+    padding: 10px; /* Ajuster la taille de la barre de recherche pour les petits écrans */
+    font-size: 14px;
+  }
+}
+
+/* Animation pour le message */
+.message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s, transform 0.5s;
+}
+
+.message.show {
+  opacity: 1;
+  transform: translateY(0);
 }
