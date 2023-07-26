@@ -137,3 +137,10 @@ button {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* Ajouter le style pour les boutons "+" et "-" */
+.column td {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

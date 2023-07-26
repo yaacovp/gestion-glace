@@ -126,7 +126,7 @@ function searchIceCream() {
 // Fonction pour mettre à jour l'affichage du stock
 function updateStockDisplay() {
   const stock = document.getElementById("stock");
-  stock.innerHTML = "<h2>Stock de Glaces</h2>";
+  stock.innerHTML = "<h2>Votre stock de Glaces</h2>";
 
   // Créer un tableau pour stocker les clés (noms de glaces) à supprimer
   const keysToRemove = [];
