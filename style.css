@@ -1,4 +1,5 @@
-body {
+ /* Styles de base pour la page */
+ body {
   font-family: Arial, sans-serif;
   max-width: 100%;
   margin: 0;
@@ -14,16 +15,18 @@ h2 {
   margin-top: 30px;
 }
 
+/* Styles pour le stock de glaces */
 #stock {
   border: 1px solid #ddd;
   padding: 10px;
   margin-top: 10px;
 }
 
+/* Styles pour la liste de glaces */
 #iceCreamList {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Colonnes adaptatives avec une largeur minimale de 250px */
-  grid-gap: 20px; /* Espacement entre les colonnes */
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 20px;
   margin-top: 20px;
 }
 
@@ -36,17 +39,19 @@ h2 {
   margin-top: 0;
 }
 
+/* Styles pour la barre de recherche */
 input[type="text"] {
   width: 100%;
-  padding: 12px; /* Ajuster la taille de la barre de recherche */
+  padding: 12px;
   font-size: 16px;
   margin-top: 5px;
   box-sizing: border-box;
 }
 
+/* Styles pour les boutons */
 button {
   font-size: 16px;
-  padding: 10px 15px; /* Ajuster la taille des boutons */
+  padding: 10px 15px;
   cursor: pointer;
   background-color: #4CAF50;
   color: white;
@@ -71,30 +76,30 @@ button.active {
   }
 
   #iceCreamList {
-    grid-template-columns: repeat(1, 1fr); /* Une seule colonne pour les écrans étroits */
+    grid-template-columns: repeat(1, 1fr);
   }
 }
 
 /* Ajuster la taille des boutons et des étiquettes de saveur */
 button {
   font-size: 16px;
-  padding: 10px 15px; /* Augmenter la taille des boutons */
+  padding: 10px 15px;
 }
 
 .column label {
-  font-size: 18px; /* Augmenter la taille des étiquettes de saveur */
+  font-size: 18px;
 }
 
 /* Ajuster la taille de la barre de recherche */
 #search {
-  padding: 12px; /* Augmenter la taille de la barre de recherche */
+  padding: 12px;
   font-size: 16px;
 }
 
 /* Limiter la largeur du tableau des glaces sur des écrans larges */
 #iceCreamList {
   max-width: 1200px;
-  margin: 0 auto; /* Centrer le tableau des glaces */
+  margin: 0 auto;
 }
 
 /* Styles pour les écrans de très petite taille */
@@ -105,15 +110,15 @@ button {
 
   button {
     font-size: 14px;
-    padding: 8px 12px; /* Ajuster la taille des boutons pour les petits écrans */
+    padding: 8px 12px;
   }
 
   .column label {
-    font-size: 16px; /* Ajuster la taille des étiquettes de saveur pour les petits écrans */
+    font-size: 16px;
   }
 
   #search {
-    padding: 10px; /* Ajuster la taille de la barre de recherche pour les petits écrans */
+    padding: 10px;
     font-size: 14px;
   }
 }
@@ -138,9 +143,56 @@ button {
   transform: translateY(0);
 }
 
-/* Ajouter le style pour les boutons "+" et "-" */
-.column td {
+/* Styles pour le stock de boîtes */
+#boxStock500ml,
+#boxStock1L {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 18px;
+  background-color: #f9f9f9;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles pour le texte du stock de boîtes */
+#boxStock500ml,
+#boxStock1L {
+  margin-bottom: 10px;
+}
+
+/* Styles pour le titre du stock de boîtes */
+#boxStock500ml::before,
+#boxStock1L::before {
+  content: attr(data-title);
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Styles pour les sections de gestion de boîtes */
+.box-management {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+/* Styles pour les boutons d'ajout et de retrait de boîtes */
+.box-management button {
+  font-size: 16px;
+  padding: 10px 15px;
+  cursor: pointer;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  transition: background-color 0.2s;
+  flex: 1;
+  margin-right: 10px;
+}
+
+/* Style pour les boutons de retrait */
+.box-management button:last-child {
+  margin-right: 0;
 }
